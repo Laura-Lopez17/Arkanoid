@@ -10,7 +10,7 @@ import javafx.geometry.Point2D;
 
 /**
  *
- * @author Natalio
+ * @author Tetas
  */
 public class Ladrillo {
 
