@@ -2,43 +2,43 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package pedro.ieslaencanta.com.dawpingpong.modelo;
+package DAW.arkanoid.modelo;
 
+import javafx.geometry.Point2D;
 import javax.swing.text.Position;
 
 /**
  *
- * @author Natalio
+ * @author Pedro
  */
 public class Barra {
-    private Coordenada2D posicion;
+    private Point2D posicion;
     private int ancho;
     private int alto;
-  
-    private int incremento=5;
+    private int incremento = 2;
+    
     public Barra() {
-        this.posicion= new Coordenada2D();
-        this.ancho = 2;
-        this.alto = 6;
+        this.posicion = new Point2D(0,0);
     }
     
-    public Barra(Coordenada2D posicion,int ancho, int alto) {
-        this.posicion= posicion;
-        this.ancho=ancho;
-        this.alto=alto;
+    public Barra(Point2D posicion,int ancho, int alto) {
+        this.posicion = posicion;
+        this.ancho = ancho;
+        this.alto = alto; 
     }
     
-    public void moverArriba(){
-        this.posicion.decY(this.incremento);
+    public void moverDerecha(){
+        this.posicion = this.posicion.add(this.incremento,0);
     }
-    public void moverAbajo(){
-        this.posicion.incY(this.incremento);
+    
+    public void moverIzquierda(){
+        this.posicion = this.posicion.add(-this.incremento,0);
     }
 
     /**
      * @return the posicion
      */
-    public Coordenada2D getPosicion() {
+    public Point2D getPosicion() {
         return posicion;
     }
 
@@ -59,15 +59,17 @@ public class Barra {
     /**
      * @param posicion the posicion to set
      */
-    public void setPosicion(Coordenada2D posicion) {
+    public void setPosicion(Point2D posicion) {
         this.posicion = posicion;
     }
+    
     /**
      * @param ancho the ancho to set
      */
     public void setAncho(int ancho) {
         this.ancho = ancho;
     }
+    
     /**
      * @param alto the alto to set
      */
